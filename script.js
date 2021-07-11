@@ -34,37 +34,46 @@ function draw() {
 function checkForWin() {
     let winner;
 
-    if (fields[0] == fields[1] && fields[1] == fields[2]) {
+    if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
         winner = fields[0];
-    } else {
-        if (fields[3] == fields[4] && fields[4] == fields[5]) {
-            winner = fields[3];
-        } else {
-            if (fields[6] == fields[7] && fields[7] == fields[8]) {
-                winner = fields[6];
-            } else {
-                if (fields[0] == fields[3] && fields[3] == fields[6]) {
-                    winner = fields[0];
-                } else {
-                    if (fields[1] == fields[4] && fields[4] == fields[7]) {
-                        winner = fields[1];
-                    } else {
-                        if (fields[2] == fields[5] && fields[5] == fields[8]) {
-                            winner = fields[2];
-                        } else {
-                            if (fields[0] == fields[4] && fields[4] == fields[8]) {
-                                winner = fields[0];
-                            } else {
-                                if (fields[2] == fields[4] && fields[4] == fields[6]) {
-                                    winner = fields[2];
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        document.getElementById('line_row0').style.transform = 'scaleX(1)';
     }
+
+    if (fields[3] == fields[4] && fields[4] == fields[5] && fields[3]) {
+        winner = fields[3];
+        document.getElementById('line_row3').style.transform = 'scaleX(1)';
+    }
+
+    if (fields[6] == fields[7] && fields[7] == fields[8] && fields[6]) {
+        winner = fields[6];
+        document.getElementById('line_row6').style.transform = 'scaleX(1)';
+    }
+
+    if (fields[0] == fields[3] && fields[3] == fields[6] && fields[0]) {
+        winner = fields[0];
+        document.getElementById('line_column0').style.transform = 'scaleX(1)';
+    }
+
+    if (fields[1] == fields[4] && fields[4] == fields[7] && fields[1]) {
+        winner = fields[1];
+        document.getElementById('line_column1').style.transform = 'rotate(90deg) scaleX(1)';
+    }
+
+    if (fields[2] == fields[5] && fields[5] == fields[8] && fields[2]) {
+        winner = fields[2];
+        document.getElementById('line_column2').style.transform = 'rotate(90deg) scaleX(1)';
+    }
+
+    if (fields[0] == fields[4] && fields[4] == fields[8] && fields[0]) {
+        winner = fields[0];
+        document.getElementById('line_diagonal0').style.transform = 'rotate(45deg) scaleX(1)';
+    }
+
+    if (fields[2] == fields[4] && fields[4] == fields[6] && fields[2]) {
+        winner = fields[2];
+        document.getElementById('line_diagonal2').style.transform = 'rotate(-45deg) scaleX(1)';
+    }
+
     if (winner) {
         console.log('GEWONNEN:', winner);
     }
