@@ -12,24 +12,29 @@
 </head>
 
 <body>
-
-<div class="playerpanel">
-    <div id="player-1">
-        <img src="./img/circle.png"> Player 1
+    <button id="restart-btn" class="restart-btn d-none">Restart game</button>
+    <img class="game-over d-none" id="game-over" src="./img/game-over.png">
+    <div class="playerpanel">
+        <div id="player-1">
+            <img src="./img/circle.png"> Player 1
+        </div>
+        <div class="player-inactive" id="player-2">
+            <img src="./img/x.png"> Player 2
+        </div>
     </div>
-    <div  class="player-inactive" id="player-2">
-        <img src="./img/x.png"> Player 2
-    </div>
-</div>
 
-<div id="line_row0" class="horizontal-line" style="top: 394px;"></div>
-<div id="line_row3" class="horizontal-line" style="top: 534px;"></div>
-<div id="line_row6" class="horizontal-line" style="top: 674px;"></div>
-<div id="line_column1" class="horizontal-line" style="top: 534px; transform: rotate(90deg) scaleX(0);"></div>
-<div id="line_column0" class="horizontal-line" style="top: 534px; transform: rotate(90deg) scaleX(0); left: 267px;"></div>
-<div id="line_column2" class="horizontal-line" style="top: 534px; transform: rotate(90deg) scaleX(0); right: 267px"></div>
-<div id="line_diagonal0" class="horizontal-line" style="top: 534px; transform: rotate(45deg) scaleX(0); width: 518px;"></div>
-<div id="line_diagonal2" class="horizontal-line" style="top: 534px; transform: rotate(-45deg) scaleX(0); width: 518px;"></div>
+    <div id="line_row0" class="horizontal-line" style="top: 394px;"></div>
+    <div id="line_row3" class="horizontal-line" style="top: 534px;"></div>
+    <div id="line_row6" class="horizontal-line" style="top: 674px;"></div>
+    <div id="line_column1" class="horizontal-line" style="top: 534px; transform: rotate(90deg) scaleX(0);"></div>
+    <div id="line_column0" class="horizontal-line" style="top: 534px; transform: rotate(90deg) scaleX(0); left: 267px;">
+    </div>
+    <div id="line_column2" class="horizontal-line" style="top: 534px; transform: rotate(90deg) scaleX(0); right: 267px">
+    </div>
+    <div id="line_diagonal0" class="horizontal-line"
+        style="top: 534px; transform: rotate(45deg) scaleX(0); width: 518px;"></div>
+    <div id="line_diagonal2" class="horizontal-line"
+        style="top: 534px; transform: rotate(-45deg) scaleX(0); width: 518px;"></div>
 
     <table>
         <tr>
