@@ -34,7 +34,7 @@ function draw() {
 
 function checkForWin() {
     let winner;
-    
+
 
     if (fields[0] == fields[1] && fields[1] == fields[2] && fields[0]) {
         winner = fields[0];
@@ -78,11 +78,33 @@ function checkForWin() {
 
     if (winner) {
         console.log('GEWONNEN:', winner);
-        gameover= true;
-        setTimeout(function(){
+        gameover = true;
+        setTimeout(function () {
             document.getElementById('game-over').classList.remove('d-none');
             document.getElementById('restart-btn').classList.remove('d-none');
         }, 1000);
 
     }
+}
+
+function restart() {
+    gameover = false;
+    fields = [];
+    document.getElementById('game-over').classList.add('d-none');
+    document.getElementById('restart-btn').classList.add('d-none');
+
+    document.getElementById('line_row0').style.transform = 'scaleX(0)';
+    document.getElementById('line_row3').style.transform = 'scaleX(0)';
+    document.getElementById('line_row6').style.transform = 'scaleX(0)';
+    document.getElementById('line_column0').style.transform = 'scaleX(0)';
+    document.getElementById('line_column1').style.transform = 'rotate(90deg) scaleX(0)';
+    document.getElementById('line_column2').style.transform = 'rotate(90deg) scaleX(0)';
+    document.getElementById('line_diagonal0').style.transform = 'rotate(45deg) scaleX(0)';
+    document.getElementById('line_diagonal2').style.transform = 'rotate(-45deg) scaleX(0)';
+
+    for (i=0; i<9; i++) {
+        document.getElementById('circle-' + i ).classList.add('d-none');
+        document.getElementById('cross-' + i ).classList.add('d-none');
+    }
+    
 }
