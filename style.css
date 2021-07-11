@@ -70,12 +70,20 @@ table {
 
 .shape {
     position: absolute;
-    height: 115px;
-    width: 115px;
-    top: 10px;
-    left: 9px;
+    height: 100px;
+    width: 100px;
+    top: 19px;
+    left: 17px;
 }
 
 .d-none {
     display: none;
+}
+
+.horizontal-line {
+    height: 10px;
+    width: 400px;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    
 }
